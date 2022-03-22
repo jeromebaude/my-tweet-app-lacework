@@ -1,5 +1,5 @@
 # Use Alpine as base
-FROM alpine:latest
+FROM alpine:3.10
 
 # Maintainer
 LABEL maintainer="andreas@lacework.net"
