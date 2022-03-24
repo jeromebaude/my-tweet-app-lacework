@@ -18,7 +18,7 @@ spec:
     spec: 
       containers: 
         - 
-          image: "index.docker.io/jeromebaude/bapbapparis:202203220846"
+          image: "index.docker.io/jeromebaude/bapbapparis:202203240901"
           name: my-tweet-app
           ports: 
             - 
