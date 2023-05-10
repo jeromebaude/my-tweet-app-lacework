@@ -1,28 +1,26 @@
---- 
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
-  labels: 
-    app: my-tweet-app
-  name: my-tweet-app
-  namespace: my-tweet-app
-spec: 
-  replicas: 2
-  selector: 
-    matchLabels: 
-      app: my-tweet-app
-  template: 
-    metadata: 
-      labels: 
+metadata:
+    labels:
         app: my-tweet-app
-    spec: 
-      containers: 
-        - 
-          image: "index.docker.io/jeromebaude/bapbapparis:202205131018"
-          name: my-tweet-app
-          ports: 
-            - 
-              containerPort: 5000
-          securityContext: 
-            allowPrivilegeEscalation: false
-            privileged: false
+    name: my-tweet-app
+    namespace: my-tweet-app
+spec:
+    replicas: 2
+    selector:
+        matchLabels:
+            app: my-tweet-app
+    template:
+        metadata:
+            labels:
+                app: my-tweet-app
+        spec:
+            containers:
+                - image: "index.docker.io/jeromebaude/bapbapparis:202205131018"
+                  name: my-tweet-app
+                  ports:
+                    - containerPort: 5000
+                  securityContext:
+                    allowPrivilegeEscalation: false
+                    privileged: false
+                    readOnlyRootFilesystem: true
